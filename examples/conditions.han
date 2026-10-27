@@ -1,0 +1,56 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Kondisi (if/else)
+# ═══════════════════════════════════════════════
+
+tetapkan skor = 85
+
+# Kondisi sederhana
+jika skor >= 90 {
+    tampil("Excellent! 🌟")
+} jika_tidak_jika skor >= 80 {
+    tampil("Bagus! 👍")
+} jika_tidak_jika skor >= 70 {
+    tampil("Cukup baik")
+} jika_tidak {
+    tampil("Perlu belajar lagi")
+}
+
+# Operator logika
+tetapkan umur = 20
+tetapkan punya_ktp = Benar
+
+jika umur >= 17 dan punya_ktp {
+    tampil("Boleh membuat SIM")
+}
+
+# Nested conditions
+tetapkan hari = "Sabtu"
+tetapkan cuaca = "cerah"
+
+jika hari == "Sabtu" atau hari == "Minggu" {
+    jika cuaca == "cerah" {
+        tampil("Waktunya jalan-jalan! ☀️")
+    } jika_tidak {
+        tampil("Istirahat di rumah saja 🏠")
+    }
+} jika_tidak {
+    tampil("Hari kerja, semangat! 💪")
+}
+
+# Match statement (pattern matching)
+tetapkan level = "gold"
+
+cocokkan level {
+    pola "bronze" {
+        tampil("Level Perunggu 🥉")
+    }
+    pola "silver" {
+        tampil("Level Perak 🥈")
+    }
+    pola "gold" {
+        tampil("Level Emas 🥇")
+    }
+    lainnya {
+        tampil("Level tidak dikenal")
+    }
+}

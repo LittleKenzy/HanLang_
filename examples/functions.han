@@ -1,0 +1,66 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Fungsi
+# ═══════════════════════════════════════════════
+
+# Fungsi sederhana
+fungsi salam(nama) {
+    tampil("Halo, {nama}! 👋")
+}
+
+salam("Kenzy")
+salam("HanLang")
+
+# Fungsi dengan return value
+fungsi luas_persegi(panjang, lebar) {
+    kembali panjang * lebar
+}
+
+tetapkan hasil = luas_persegi(10, 5)
+tampil("Luas persegi: {hasil}")
+
+# Fungsi rekursif — Fibonacci
+fungsi fibonacci(n) {
+    jika n <= 1 {
+        kembali n
+    }
+    kembali fibonacci(n - 1) + fibonacci(n - 2)
+}
+
+tampil("Fibonacci ke-10: {fibonacci(10)}")
+
+# Fungsi dengan logika
+fungsi faktorial(n) {
+    jika n <= 1 {
+        kembali 1
+    }
+    kembali n * faktorial(n - 1)
+}
+
+tampil("Faktorial 5: {faktorial(5)}")
+
+# Closure
+fungsi buat_penghitung(mulai) {
+    tetapkan hitung = mulai
+    fungsi tambah() {
+        hitung += 1
+        kembali hitung
+    }
+    kembali tambah
+}
+
+# Fungsi sebagai parameter (higher-order)
+fungsi terapkan(daftar_nilai, operasi) {
+    tetapkan hasil = []
+    ulangi untuk item dalam daftar_nilai {
+        tambah(hasil, operasi(item))
+    }
+    kembali hasil
+}
+
+fungsi kali_dua(x) {
+    kembali x * 2
+}
+
+tetapkan angka = [1, 2, 3, 4, 5]
+tetapkan hasil_kali = terapkan(angka, kali_dua)
+tampil("Kali dua:", hasil_kali)

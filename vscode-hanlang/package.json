@@ -1,0 +1,162 @@
+{
+  "name": "hanlang-vscode",
+  "displayName": "HanLang",
+  "description": "Dukungan lengkap untuk bahasa pemrograman HanLang — syntax highlighting, autocomplete, snippets, dan eksekusi terintegrasi.",
+  "version": "0.1.0",
+  "publisher": "BilalAlaudin",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "hanlang",
+    "han",
+    "bahasa pemrograman",
+    "indonesian",
+    "programming language"
+  ],
+  "activationEvents": [
+    "onLanguage:hanlang"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "hanlang",
+        "aliases": [
+          "HanLang",
+          "hanlang",
+          "han"
+        ],
+        "extensions": [
+          ".han"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/hanlang-file.svg",
+          "dark": "./icons/hanlang-file.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hanlang",
+        "scopeName": "source.hanlang",
+        "path": "./syntaxes/hanlang.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "hanlang",
+        "path": "./snippets/hanlang.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "hanlang-icons",
+        "label": "HanLang File Icons",
+        "path": "./themes/hanlang-icon-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "hanlang.runFile",
+        "title": "HanLang: Jalankan File Saat Ini",
+        "icon": "$(play)",
+        "category": "HanLang"
+      },
+      {
+        "command": "hanlang.checkFile",
+        "title": "HanLang: Periksa Syntax File Saat Ini",
+        "icon": "$(check)",
+        "category": "HanLang"
+      },
+      {
+        "command": "hanlang.showOutput",
+        "title": "HanLang: Tampilkan Output",
+        "icon": "$(output)",
+        "category": "HanLang"
+      },
+      {
+        "command": "hanlang.openDocs",
+        "title": "HanLang: Buka Dokumentasi",
+        "icon": "$(book)",
+        "category": "HanLang"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "hanlang.runFile",
+          "when": "editorLangId == hanlang",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "hanlang.runFile",
+          "when": "editorLangId == hanlang",
+          "group": "1_hanlang"
+        },
+        {
+          "command": "hanlang.checkFile",
+          "when": "editorLangId == hanlang",
+          "group": "1_hanlang"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "hanlang.runFile",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorLangId == hanlang"
+      },
+      {
+        "command": "hanlang.checkFile",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorLangId == hanlang"
+      }
+    ],
+    "configuration": {
+      "title": "HanLang",
+      "properties": {
+        "hanlang.interpreterCommand": {
+          "type": "string",
+          "default": "",
+          "description": "Perintah interpreter HanLang (default: 'han' — otomatis terdeteksi setelah pip install). Kosongkan untuk deteksi otomatis."
+        },
+        "hanlang.extraArgs": {
+          "type": "string",
+          "default": "",
+          "description": "Argumen tambahan yang diberikan ke interpreter."
+        },
+        "hanlang.runInTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Jalankan program di terminal terintegrasi (true) atau output channel (false)."
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hanlang-team/hanlang"
+  },
+  "scripts": {
+    "package": "npx -y @vscode/vsce package --allow-missing-repository"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/vscode": "~1.75.0",
+    "@vscode/vsce": "^3.2.2",
+    "typescript": "^7.0.2"
+  }
+}

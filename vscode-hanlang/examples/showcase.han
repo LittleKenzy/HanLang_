@@ -1,0 +1,151 @@
+# ═══════════════════════════════════════════════
+#   Contoh Program HanLang
+#   Untuk testing syntax highlighting
+# ═══════════════════════════════════════════════
+
+# Variabel dan konstanta
+tetapkan nama = "HanLang"
+tetapkan versi = 1
+tetapkan tinggi = 175.5
+tetapkan aktif = Benar
+tetapkan data = kosong
+konstan PI = 3.14159
+
+# String interpolation
+tampil("Selamat datang di {nama} versi {versi}!")
+tampil('String tanpa interpolasi: {nama}')
+
+# Operasi aritmatika
+tetapkan a = 10
+tetapkan b = 3
+tetapkan hasil = a + b * 2 - 1
+tetapkan pangkat = 2 ** 10
+tetapkan sisa = a % b
+tetapkan bagi_bulat = a // b
+
+# Perbandingan dan logika
+tetapkan cek = a > b dan b != 0
+tetapkan pilih = a == 10 atau b >= 5
+tetapkan negasi = bukan Salah
+
+# Compound assignment
+a += 5
+a -= 2
+a *= 3
+a /= 2
+
+# Kondisi
+jika a > 10 {
+    tampil("Besar!")
+} jika_tidak_jika a > 5 {
+    tampil("Sedang")
+} jika_tidak {
+    tampil("Kecil")
+}
+
+# Pattern matching
+cocokkan nama {
+    pola "HanLang" {
+        tampil("Bahasa kita!")
+    }
+    lainnya {
+        tampil("Bahasa lain")
+    }
+}
+
+# Fungsi
+fungsi luas_persegi(panjang, lebar) {
+    kembali panjang * lebar
+}
+
+fungsi fibonacci(n) {
+    jika n <= 1 {
+        kembali n
+    }
+    kembali fibonacci(n - 1) + fibonacci(n - 2)
+}
+
+tetapkan luas = luas_persegi(10, 5)
+tampil("Luas: {luas}")
+
+# Lambda
+tetapkan kali_dua = x => x * 2
+
+# Loop
+ulangi untuk i dalam rentang(1, 6) {
+    tampil("Hitung: {i}")
+}
+
+ulangi selama b > 0 {
+    b -= 1
+}
+
+untuk item dalam [1, 2, 3] {
+    jika item == 2 {
+        lanjut
+    }
+    jika item == 3 {
+        berhenti
+    }
+    tampil(item)
+}
+
+# Koleksi
+tetapkan buah = ["apel", "jeruk", "mangga"]
+tetapkan user = {
+    "nama": "Kenzy",
+    "umur": 25,
+    "aktif": Benar
+}
+
+tampil(buah[0])
+tampil(user.nama)
+tampil(panjang(buah))
+tambah(buah, "durian")
+
+# Pipeline
+tetapkan angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tetapkan genap = angka |> saring(x => x % 2 == 0)
+tetapkan kuadrat = angka |> ubah(x => x * x)
+
+# Error handling
+coba {
+    tetapkan r = 10 / 0
+} tangkap error {
+    tampil("Error: {error.pesan}")
+} akhirnya {
+    tampil("Selesai")
+}
+
+# Import & stdlib
+impor math
+tampil(math.akar(144))
+tampil(math.pi)
+
+impor text
+tampil(text.huruf_besar("hanlang"))
+
+# Data explorer
+jelajahi user
+
+# Testing
+uji "operasi dasar" {
+    pastikan 2 + 2 == 4
+    pastikan panjang("hello") == 5
+}
+
+# Built-in functions
+tetapkan tipe_nama = tipe(nama)
+tetapkan str_angka = teks(42)
+tetapkan num = bilangan("100")
+tetapkan dec = desimal("3.14")
+tetapkan bool_val = boolean(1)
+tetapkan pjg = panjang([1, 2, 3])
+tetapkan sorted = urutkan([3, 1, 2])
+tetapkan rev = balik([1, 2, 3])
+tetapkan mn = min(1, 2, 3)
+tetapkan mx = max(1, 2, 3)
+tetapkan ada = berisi([1, 2, 3], 2)
+tetapkan k = kunci(user)
+tetapkan v = nilai(user)
+tetapkan ab = abs(-42)

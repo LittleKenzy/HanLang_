@@ -1,0 +1,43 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Variabel & Tipe Data
+# ═══════════════════════════════════════════════
+
+# Deklarasi variabel dengan tetapkan
+tetapkan nama = "HanLang"
+tetapkan umur = 1
+tetapkan tinggi = 175.5
+tetapkan aktif = Benar
+tetapkan data = kosong
+
+# Konstanta tidak bisa diubah
+konstan PI = 3.14159
+konstan VERSI = "0.1.0"
+
+# Menampilkan tipe data
+tampil("nama:", tipe(nama))        # teks
+tampil("umur:", tipe(umur))        # bilangan
+tampil("tinggi:", tipe(tinggi))    # desimal
+tampil("aktif:", tipe(aktif))      # boolean
+tampil("data:", tipe(data))        # kosong
+tampil("PI:", tipe(PI))            # desimal
+
+# Konversi tipe
+tetapkan angka_str = "42"
+tetapkan angka = bilangan(angka_str)
+tampil("Konversi: '{angka_str}' -> {angka}")
+
+# Operasi aritmatika
+tetapkan a = 10
+tetapkan b = 3
+tampil("Penjumlahan: {a} + {b} = {a + b}")
+tampil("Pengurangan: {a} - {b} = {a - b}")
+tampil("Perkalian:   {a} * {b} = {a * b}")
+tampil("Pembagian:   {a} / {b} = {a / b}")
+tampil("Sisa bagi:   {a} % {b} = {a % b}")
+tampil("Pangkat:     {a} ** {b} = {a ** b}")
+
+# Compound assignment
+tetapkan skor = 100
+skor += 10
+skor -= 5
+tampil("Skor setelah operasi:", skor)

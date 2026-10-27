@@ -1,0 +1,248 @@
+{
+  "Hello World": {
+    "prefix": ["hl-hello", "halo"],
+    "body": [
+      "tampil(\"Halo dari HanLang! 🎉\")"
+    ],
+    "description": "Program Hello World sederhana"
+  },
+
+  "Tampil": {
+    "prefix": ["tampil", "hl-print"],
+    "body": [
+      "tampil(${1:\"pesan\"})"
+    ],
+    "description": "Cetak nilai ke output — tampil(nilai)"
+  },
+
+  "Tetapkan Variabel": {
+    "prefix": ["tetapkan", "hl-var"],
+    "body": [
+      "tetapkan ${1:nama} = ${2:nilai}"
+    ],
+    "description": "Deklarasi variabel — tetapkan nama = nilai"
+  },
+
+  "Konstan": {
+    "prefix": ["konstan", "hl-const"],
+    "body": [
+      "konstan ${1:NAMA} = ${2:nilai}"
+    ],
+    "description": "Deklarasi konstanta — konstan NAMA = nilai"
+  },
+
+  "Jika": {
+    "prefix": ["jika", "hl-if"],
+    "body": [
+      "jika ${1:kondisi} {",
+      "    ${2:// kode}",
+      "}"
+    ],
+    "description": "Kondisi if — jika kondisi { ... }"
+  },
+
+  "Jika Tidak": {
+    "prefix": ["hl-ifelse"],
+    "body": [
+      "jika ${1:kondisi} {",
+      "    ${2:// jika benar}",
+      "} jika_tidak {",
+      "    ${3:// jika salah}",
+      "}"
+    ],
+    "description": "Kondisi if/else — jika ... jika_tidak ..."
+  },
+
+  "Jika Tidak Jika": {
+    "prefix": ["hl-ifelif"],
+    "body": [
+      "jika ${1:kondisi1} {",
+      "    ${2:// kode 1}",
+      "} jika_tidak_jika ${3:kondisi2} {",
+      "    ${4:// kode 2}",
+      "} jika_tidak {",
+      "    ${5:// default}",
+      "}"
+    ],
+    "description": "Kondisi if/elif/else lengkap"
+  },
+
+  "Fungsi": {
+    "prefix": ["fungsi", "hl-func"],
+    "body": [
+      "fungsi ${1:nama}(${2:parameter}) {",
+      "    ${3:// isi fungsi}",
+      "    kembali ${4:hasil}",
+      "}"
+    ],
+    "description": "Deklarasi fungsi — fungsi nama(params) { ... }"
+  },
+
+  "Fungsi Tanpa Return": {
+    "prefix": ["hl-proc"],
+    "body": [
+      "fungsi ${1:nama}(${2:parameter}) {",
+      "    ${3:// isi fungsi}",
+      "}"
+    ],
+    "description": "Fungsi tanpa return value"
+  },
+
+  "For Loop": {
+    "prefix": ["hl-for", "ulangi untuk"],
+    "body": [
+      "ulangi untuk ${1:i} dalam rentang(${2:1}, ${3:11}) {",
+      "    ${4:tampil(${1:i})}",
+      "}"
+    ],
+    "description": "Loop for dengan rentang — ulangi untuk i dalam rentang(start, end) { ... }"
+  },
+
+  "While Loop": {
+    "prefix": ["hl-while", "ulangi selama"],
+    "body": [
+      "ulangi selama ${1:kondisi} {",
+      "    ${2:// kode}",
+      "}"
+    ],
+    "description": "Loop while — ulangi selama kondisi { ... }"
+  },
+
+  "For In Loop": {
+    "prefix": ["hl-forin", "untuk dalam"],
+    "body": [
+      "untuk ${1:item} dalam ${2:daftar} {",
+      "    ${3:tampil(${1:item})}",
+      "}"
+    ],
+    "description": "Loop for-in — untuk item dalam koleksi { ... }"
+  },
+
+  "Try Catch": {
+    "prefix": ["coba", "hl-try"],
+    "body": [
+      "coba {",
+      "    ${1:// kode yang mungkin error}",
+      "} tangkap ${2:error} {",
+      "    tampil(\"Error: {${2:error}.pesan}\")",
+      "}"
+    ],
+    "description": "Error handling — coba { ... } tangkap error { ... }"
+  },
+
+  "Try Catch Finally": {
+    "prefix": ["hl-tryfinally"],
+    "body": [
+      "coba {",
+      "    ${1:// kode}",
+      "} tangkap ${2:error} {",
+      "    tampil(\"Error: {${2:error}.pesan}\")",
+      "} akhirnya {",
+      "    ${3:// selalu dijalankan}",
+      "}"
+    ],
+    "description": "Error handling lengkap dengan blok akhirnya"
+  },
+
+  "Impor": {
+    "prefix": ["impor", "hl-import"],
+    "body": [
+      "impor ${1|math,text,list,file,json,time,random,system,test|}"
+    ],
+    "description": "Import modul standard library"
+  },
+
+  "List": {
+    "prefix": ["hl-list"],
+    "body": [
+      "tetapkan ${1:daftar} = [${2:elemen}]"
+    ],
+    "description": "Deklarasi list/daftar"
+  },
+
+  "Map": {
+    "prefix": ["hl-map", "hl-peta"],
+    "body": [
+      "tetapkan ${1:data} = {",
+      "    \"${2:kunci}\": ${3:nilai}",
+      "}"
+    ],
+    "description": "Deklarasi map/peta"
+  },
+
+  "Cocokkan": {
+    "prefix": ["cocokkan", "hl-match"],
+    "body": [
+      "cocokkan ${1:ekspresi} {",
+      "    pola ${2:nilai1} {",
+      "        ${3:// kode}",
+      "    }",
+      "    lainnya {",
+      "        ${4:// default}",
+      "    }",
+      "}"
+    ],
+    "description": "Pattern matching — cocokkan ekspresi { pola ... lainnya ... }"
+  },
+
+  "Lambda": {
+    "prefix": ["hl-lambda"],
+    "body": [
+      "${1:x} => ${2:x + 1}"
+    ],
+    "description": "Lambda expression — x => ekspresi"
+  },
+
+  "Pipeline": {
+    "prefix": ["hl-pipe", "|>"],
+    "body": [
+      "${1:data} |> ${2|saring,ubah|}(${3:x => x})"
+    ],
+    "description": "Pipeline operator — data |> fungsi(lambda)"
+  },
+
+  "Uji": {
+    "prefix": ["uji", "hl-test"],
+    "body": [
+      "uji \"${1:nama test}\" {",
+      "    pastikan ${2:2 + 2 == 4}",
+      "}"
+    ],
+    "description": "Blok test — uji \"nama\" { pastikan ekspresi }"
+  },
+
+  "Jelajahi": {
+    "prefix": ["jelajahi", "hl-explore"],
+    "body": [
+      "jelajahi ${1:data}"
+    ],
+    "description": "Data explorer — inspeksi struktur data"
+  },
+
+  "Komentar Header": {
+    "prefix": ["hl-header"],
+    "body": [
+      "# ═══════════════════════════════════════════════",
+      "#   ${1:Judul Program}",
+      "# ═══════════════════════════════════════════════",
+      "",
+      "${0}"
+    ],
+    "description": "Header komentar dekoratif"
+  },
+
+  "Starter Program": {
+    "prefix": ["hl-starter", "hl-start"],
+    "body": [
+      "# ═══════════════════════════════════════════════",
+      "#   ${1:Nama Program}",
+      "# ═══════════════════════════════════════════════",
+      "",
+      "tetapkan nama = \"${2:HanLang}\"",
+      "tampil(\"Selamat datang, {nama}! 🎉\")",
+      "",
+      "${0}"
+    ],
+    "description": "Template program HanLang lengkap"
+  }
+}

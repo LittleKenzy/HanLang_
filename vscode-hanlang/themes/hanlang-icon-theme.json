@@ -1,0 +1,14 @@
+{
+  "hidesExplorerArrows": false,
+  "file": {
+    "iconPath": "./icons/hanlang-file.svg"
+  },
+  "fileExtensions": {
+    "han": "./icons/hanlang-file.svg"
+  },
+  "fileNames": {},
+  "folderNames": {},
+  "languageIds": {
+    "hanlang": "./icons/hanlang-file.svg"
+  }
+}

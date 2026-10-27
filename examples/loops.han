@@ -1,0 +1,48 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Loop
+# ═══════════════════════════════════════════════
+
+# Loop for dengan rentang
+tampil("Hitung 1-5:")
+ulangi untuk i dalam rentang(1, 6) {
+    tampil("  {i}")
+}
+
+# Loop while
+tampil("\nHitung mundur:")
+tetapkan hitung = 5
+ulangi selama hitung > 0 {
+    tampil("  {hitung}...")
+    hitung -= 1
+}
+tampil("  🚀 Meluncur!")
+
+# For-in loop
+tetapkan warna = ["merah", "biru", "hijau"]
+tampil("\nWarna favorit:")
+untuk w dalam warna {
+    tampil("  🎨 {w}")
+}
+
+# Loop dengan break dan continue
+tampil("\nAngka ganjil saja (1-10):")
+ulangi untuk i dalam rentang(1, 11) {
+    jika i % 2 == 0 {
+        lanjut
+    }
+    jika i > 8 {
+        berhenti
+    }
+    tampil("  {i}")
+}
+
+# Nested loops
+tampil("\nTabel perkalian 3x3:")
+ulangi untuk i dalam rentang(1, 4) {
+    tetapkan baris = ""
+    ulangi untuk j dalam rentang(1, 4) {
+        tetapkan hasil = i * j
+        baris = baris + teks(hasil) + "\t"
+    }
+    tampil("  {baris}")
+}

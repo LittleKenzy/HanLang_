@@ -1,0 +1,11 @@
+# Program HanLang — Backward Compatibility
+# File ini tetap berjalan dengan interpreter baru
+
+tampil("Halo dari HanLang!")
+
+tetapkan angka = 10
+tampil(angka)
+
+jika angka > 5 {
+    tampil("Kondisi berhasil!")
+}

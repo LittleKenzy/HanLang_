@@ -1,0 +1,70 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Error Handling & Fitur Khusus
+# ═══════════════════════════════════════════════
+
+# Error handling dengan coba-tangkap
+coba {
+    tetapkan hasil = 10 / 0
+} tangkap error {
+    tampil("Tertangkap: {error.pesan}")
+}
+
+# Try-catch-finally
+coba {
+    tetapkan angka = bilangan("bukan_angka")
+} tangkap error {
+    tampil("Error konversi: {error.pesan}")
+} akhirnya {
+    tampil("Blok akhirnya selalu dijalankan")
+}
+
+# Data explorer
+tetapkan data = {
+    "proyek": "HanLang",
+    "versi": 1,
+    "fitur": ["lexer", "parser", "runtime"],
+    "pengaturan": {
+        "debug": Salah,
+        "verbose": Benar
+    }
+}
+
+tampil("\n--- Data Explorer ---")
+jelajahi data
+
+# Standard library: math
+impor math
+tampil("\n--- Modul Math ---")
+tampil("PI:", math.pi)
+tampil("Akar 144:", math.akar(144))
+tampil("Lantai 3.7:", math.lantai(3.7))
+tampil("Langit 3.2:", math.langit(3.2))
+
+# Standard library: text
+impor text
+tampil("\n--- Modul Text ---")
+tetapkan pesan = "  Halo Dunia!  "
+tampil("Asli: '{pesan}'")
+tampil("Potong:", text.potong(pesan))
+tampil("Besar:", text.huruf_besar("hanlang"))
+tampil("Kecil:", text.huruf_kecil("HANLANG"))
+
+# Test blocks
+uji "penjumlahan" {
+    pastikan 2 + 3 == 5
+    pastikan 10 - 4 == 6
+}
+
+uji "string" {
+    tetapkan nama = "HanLang"
+    pastikan panjang(nama) == 7
+    pastikan nama == "HanLang"
+}
+
+uji "daftar" {
+    tetapkan data = [1, 2, 3]
+    pastikan panjang(data) == 3
+    pastikan data[0] == 1
+    tambah(data, 4)
+    pastikan panjang(data) == 4
+}

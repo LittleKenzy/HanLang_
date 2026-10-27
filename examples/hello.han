@@ -1,0 +1,16 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Hello World
+#   Contoh program pertama
+# ═══════════════════════════════════════════════
+
+tampil("═══════════════════════════════════════")
+tampil("  Selamat datang di HanLang! 🎉")
+tampil("  Bahasa pemrograman yang ekspresif")
+tampil("═══════════════════════════════════════")
+
+# Variabel dan string interpolation
+tetapkan nama = "Kenzy"
+tetapkan versi = 1
+
+tampil("Halo, {nama}! Ini HanLang versi {versi}.")
+tampil("Selamat belajar pemrograman! 🚀")

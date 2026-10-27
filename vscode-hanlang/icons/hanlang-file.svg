@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="fGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- File shape -->
+  <path d="M6 2 L20 2 L26 8 L26 30 L6 30 Z" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+  <path d="M20 2 L20 8 L26 8" fill="#334155" stroke="#334155" stroke-width="1"/>
+  <!-- H letter -->
+  <rect x="10" y="12" width="3" height="14" rx="1" fill="url(#fGrad)"/>
+  <rect x="19" y="12" width="3" height="14" rx="1" fill="url(#fGrad)"/>
+  <rect x="10" y="18" width="12" height="3" rx="1" fill="url(#fGrad)"/>
+</svg>

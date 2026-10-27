@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════
+#   HanLang — Koleksi (Lists & Maps)
+# ═══════════════════════════════════════════════
+
+# Daftar (List)
+tetapkan buah = ["apel", "jeruk", "mangga", "durian"]
+tampil("Buah-buahan:", buah)
+tampil("Buah pertama:", buah[0])
+tampil("Jumlah buah:", panjang(buah))
+
+# Menambah dan menghapus elemen
+tambah(buah, "rambutan")
+tampil("Setelah ditambah:", buah)
+
+# Iterasi
+tampil("\nDaftar buah:")
+ulangi untuk b dalam buah {
+    tampil("  🍎 {b}")
+}
+
+# List operations
+tetapkan angka = [5, 2, 8, 1, 9, 3]
+tampil("\nAngka asli:", angka)
+tampil("Terurut:", urutkan(angka))
+tampil("Terbalik:", balik(angka))
+tampil("Min:", min(angka))
+tampil("Max:", max(angka))
+
+# Peta (Map/Dictionary)
+tetapkan pengguna = {
+    "nama": "Kenzy",
+    "umur": 25,
+    "kota": "Jakarta",
+    "aktif": Benar
+}
+
+tampil("\nData Pengguna:")
+tampil("  Nama: {pengguna.nama}")
+tampil("  Umur: {pengguna.umur}")
+tampil("  Kota: {pengguna.kota}")
+
+# Map operations
+tetapkan semua_kunci = kunci(pengguna)
+tampil("\nKunci:", semua_kunci)
+
+# Nested collections
+tetapkan siswa = [
+    {"nama": "Andi", "nilai": 90},
+    {"nama": "Budi", "nilai": 85},
+    {"nama": "Citra", "nilai": 92}
+]
+
+tampil("\nDaftar Siswa:")
+ulangi untuk s dalam siswa {
+    tampil("  📚 {s.nama}: {s.nilai}")
+}
+
+# Pipeline operations (Flow Blocks)
+tetapkan data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+tetapkan genap = data |> saring(x => x % 2 == 0)
+tampil("\nBilangan genap:", genap)
+
+tetapkan kuadrat = data |> ubah(x => x * x)
+tampil("Kuadrat:", kuadrat)
+
+# Chained pipeline
+tetapkan hasil_pipeline = data |> saring(x => x > 3) |> ubah(x => x * 10)
+tampil("Pipeline berantai:", hasil_pipeline)

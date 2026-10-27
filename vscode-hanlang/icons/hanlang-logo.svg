@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E293B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background rounded square -->
+  <rect x="8" y="8" width="240" height="240" rx="40" fill="url(#bgGrad)" stroke="#1E3A5F" stroke-width="2"/>
+  <!-- H letter with circuit aesthetic -->
+  <g filter="url(#glow)">
+    <!-- Left vertical of H -->
+    <rect x="56" y="52" width="24" height="152" rx="4" fill="url(#hGrad)"/>
+    <!-- Right vertical of H -->
+    <rect x="176" y="52" width="24" height="152" rx="4" fill="url(#hGrad)"/>
+    <!-- Horizontal bar of H -->
+    <rect x="56" y="116" width="144" height="24" rx="4" fill="url(#hGrad)"/>
+    <!-- Circuit dots on left -->
+    <circle cx="68" cy="80" r="5" fill="#0F172A" stroke="url(#hGrad)" stroke-width="2"/>
+    <circle cx="68" cy="172" r="5" fill="#0F172A" stroke="url(#hGrad)" stroke-width="2"/>
+    <!-- Circuit dots on right -->
+    <circle cx="188" cy="80" r="5" fill="#0F172A" stroke="url(#hGrad)" stroke-width="2"/>
+    <circle cx="188" cy="172" r="5" fill="#0F172A" stroke="url(#hGrad)" stroke-width="2"/>
+    <!-- Curly braces integrated -->
+    <path d="M46 90 Q36 128 46 166" stroke="url(#hGrad)" stroke-width="3" fill="none" opacity="0.6"/>
+    <path d="M210 90 Q220 128 210 166" stroke="url(#hGrad)" stroke-width="3" fill="none" opacity="0.6"/>
+  </g>
+</svg>
